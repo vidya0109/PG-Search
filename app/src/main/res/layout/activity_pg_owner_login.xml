@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PgOwnerLogin"
+    android:background="@color/LightPink">
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="0dp"
+
+        android:background="@drawable/shape_triangle_second" />
+
+    <EditText
+        android:id="@+id/pg_owner_log_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/pg_owner_log_edt_txt_bg"
+        android:hint="@string/owner_email"
+        android:padding="15dp"
+        android:textColorHint="@color/DarkPink"
+        android:textSize="20sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_your_password"
+        android:id="@+id/pg_owner_log_password"
+        android:layout_below="@id/pg_owner_log_email"
+        android:background="@drawable/pg_owner_log_edt_txt_bg"
+        android:textSize="20sp"
+        android:padding="15dp"
+        android:layout_margin="7dp"
+        android:textColorHint="@color/DarkPink"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:id="@+id/pg_owner_reg_btn"
+        android:layout_below="@+id/pg_owner_log_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:onClick="Login"
+        android:background="@drawable/pg_owner_reg_btn_bg"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/not_registered_tap_here"
+        android:textColor="@color/DarkBlue"
+        android:layout_below="@+id/pg_owner_log_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_triangle">
+
+
+        <TextView
+            android:id="@+id/reg_act_intent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="100dp"
+            android:text="@string/not_registered_tap_here"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_your_email"
+        android:id="@+id/log_email_"
+        android:background="@drawable/log_edt_tet_bg"
+        android:layout_centerInParent="true"
+        android:textSize="20sp"
+        android:layout_margin="7dp"
+        android:padding="15dp"
+        android:textColor="@color/LightGreen"
+        android:elevation="20dp"
+        android:textColorHint="@color/DarkBlue"
+
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_your_password"
+        android:id="@+id/log_password_"
+        android:inputType="textPassword"
+        android:background="@drawable/log_edt_tet_bg"
+        android:layout_below="@+id/log_email_"
+        android:textSize="20sp"
+        android:layout_margin="7dp"
+        android:padding="15dp"
+        android:textColor="#5d8f6c"
+        android:elevation="20dp"
+        android:textColorHint="@color/DarkBlue"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/log_password_"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/pg_owner_reg_btn_bg"
+        android:onClick="login"
+        android:text="@string/login" />
+
+
+
+</RelativeLayout>

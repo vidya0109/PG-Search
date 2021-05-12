@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_triangle"
+    tools:context=".PgOwnerReg">
+
+
+    <EditText
+        android:id="@+id/pg_reg_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pg_owner_reg_name"
+        android:layout_margin="7dp"
+        android:background="@drawable/pg_owner_edt_txt_bg"
+        android:hint="@string/pg_name"
+        android:padding="15dp"
+        android:textColorHint="@color/DarkBlue"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/pg_owner_reg_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pg_owner_reg_email"
+        android:layout_margin="7dp"
+        android:background="@drawable/pg_owner_edt_txt_bg"
+        android:hint="@string/owner_name"
+        android:padding="15dp"
+        android:textColorHint="@color/DarkBlue"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/pg_owner_reg_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/aadhar_no"
+        android:layout_centerVertical="true"
+        android:layout_margin="7dp"
+        android:background="@drawable/pg_owner_edt_txt_bg"
+        android:hint="@string/owner_email"
+        android:padding="15dp"
+        android:textColorHint="@color/DarkBlue"
+        android:textSize="20sp" />
+
+
+    <EditText
+        android:id="@+id/aadhar_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="7dp"
+        android:background="@drawable/pg_owner_edt_txt_bg"
+        android:hint="@string/aadhar_card_number"
+        android:padding="15dp"
+        android:textColorHint="@color/DarkBlue"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/pg_reg_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aadhar_no"
+        android:layout_margin="7dp"
+        android:background="@drawable/pg_owner_edt_txt_bg"
+        android:hint="@string/pg_registration_id"
+        android:padding="15dp"
+        android:textColorHint="@color/DarkBlue"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/pg_owner_reg_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pg_reg_id"
+        android:layout_margin="7dp"
+        android:background="@drawable/pg_owner_edt_txt_bg"
+        android:hint="@string/enter_your_password"
+        android:padding="15dp"
+        android:textColorHint="@color/DarkBlue"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/pg_owner_reg_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pg_owner_reg_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/pg_owner_reg_btn_bg"
+        android:onClick="SignUp"
+        android:text="@string/register" />
+
+    <TextView
+        android:id="@+id/texxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pg_owner_reg_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:text="@string/already_registered_sign_in_here"
+        android:textColor="@color/DarkBlue" />
+
+</RelativeLayout>

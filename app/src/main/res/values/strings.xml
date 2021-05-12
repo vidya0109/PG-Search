@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">PG Search</string>
+    <string name="the_perfect_place">THE PERFECT PLACE</string>
+    <string name="not_registered_tap_here">Not registered yet? Tap here</string>
+    <string name="enter_your_email">EMAIL</string>
+    <string name="enter_your_password">PASSWORD</string>
+    <string name="already_registered_sign_in_here">Already registered? Tap here</string>
+    <string name="enter_your_name">NAME</string>
+    <string name="pg_name">PG NAME</string>
+    <string name="owner_name">Owner Name</string>
+    <string name="owner_email">Owner Email</string>
+    <string name="aadhar_card_number">Aadhar Card Number</string>
+    <string name="pg_registration_id">PG Registration Id</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+</resources>

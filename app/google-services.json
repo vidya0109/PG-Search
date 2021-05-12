@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "731821205342",
+    "project_id": "pg-search-d502f",
+    "storage_bucket": "pg-search-d502f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731821205342:android:1dd05282829605c9cf91cf",
+        "android_client_info": {
+          "package_name": "com.example.pgsearch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731821205342-k1av9k4f9k9r4f80mg4lm82a6v35s753.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBEqkTdCgSeFk9_Z-O01hCeU8XcdbT26U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731821205342-k1av9k4f9k9r4f80mg4lm82a6v35s753.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
