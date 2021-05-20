@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.app.StatusBarManager;
 import android.content.Intent;
@@ -19,11 +22,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.pgsearch.Adapters.StaggeredAdapter;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     LinearLayout linearLayout;
     TextView textView,textView2,searchBar;
+    RecyclerView staggeredRecyclerView;
+
+    ArrayList images = new ArrayList<>(Arrays.asList(R.drawable.ic_door_2, R.drawable.ic_door_3, R.drawable.ic_door_4, R.drawable.ic_door_5,
+            R.drawable.ic_door_5, R.drawable.ic_door_6,R.drawable.ic_door_2, R.drawable.ic_door_3, R.drawable.ic_door_4, R.drawable.ic_door_5,
+            R.drawable.ic_door_5, R.drawable.ic_door_6));
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +76,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        staggeredRecyclerView = (RecyclerView) findViewById(R.id.recyclerViewStaggered);
+        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
+        staggeredRecyclerView.setLayoutManager(staggeredGridLayoutManager);
+        StaggeredAdapter adapter = new StaggeredAdapter(MainActivity.this, images);
+        staggeredRecyclerView.setAdapter(adapter);
 
 
 
