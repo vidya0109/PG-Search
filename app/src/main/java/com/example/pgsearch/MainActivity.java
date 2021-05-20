@@ -8,6 +8,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.StatusBarManager;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
     LinearLayout linearLayout;
-    TextView textView,textView2;
+    TextView textView,textView2,searchBar;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationView navigationView = findViewById(R.id.navmenu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
         linearLayout = findViewById(R.id.navHeader);
         nav = (NavigationView) findViewById(R.id.navmenu);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
@@ -49,9 +50,21 @@ public class MainActivity extends AppCompatActivity {
         textView2 = (TextView)hView.findViewById(R.id.email);
         textView.setText("Profile name");
         textView2.setText("Profile email");
+        searchBar = findViewById(R.id.search_bar);
+
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
+        searchBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,SearchActivty.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
