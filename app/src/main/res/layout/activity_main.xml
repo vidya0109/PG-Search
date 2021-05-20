@@ -81,7 +81,16 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp" />
 
+
         </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewStaggered"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/search_bar_rel_layout"
+            android:layout_marginTop="30dp" />
+
 
 
 
