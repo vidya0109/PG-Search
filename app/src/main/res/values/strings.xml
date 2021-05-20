@@ -16,4 +16,5 @@
 
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="search_toolbar_text">Search Bar</string>
 </resources>
