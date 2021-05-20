@@ -16,5 +16,21 @@
 
     <string name="open">Open</string>
     <string name="close">Close</string>
-    <string name="search_toolbar_text">Search Bar</string>
+
+    <string name="heading_one">Heading 1</string>
+    <string name="heading_two">Heading 2</string>
+    <string name="heading_three">Heading 3</string>
+    <string name="heading_fourth">Heading 4</string>
+
+    <string name="desc_one">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
+    <string name="desc_two">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
+    <string name="desc_three">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
+    <string name="desc_fourth">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
+    <string name="search_toolbar_text">Search toolbar text</string>
+    <string name="main_activity_text">Find Your Perfect Place</string>
+    <string name="most_popular">Most Popular</string>
+    <string name="sample_pg_name">Sample PG NAME</string>
+    <string name="sample_pg_owner">Sample PG owner</string>
+    <string name="rating">4.5/5</string>
+
 </resources>

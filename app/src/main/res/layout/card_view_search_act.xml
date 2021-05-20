@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/image2"
+            android:id="@+id/pg_img"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sample_pg_name"
+            android:id="@+id/pg_name"
+            android:layout_toEndOf="@+id/pg_img"
+            android:layout_toRightOf="@+id/pg_img"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:textSize="17sp"
+            android:layout_toStartOf="@id/direction_btn"
+            android:layout_toLeftOf="@id/direction_btn" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sample_pg_owner"
+            android:layout_toEndOf="@+id/pg_img"
+            android:layout_toRightOf="@+id/pg_img"
+            android:layout_below="@id/pg_name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="3dp"
+            android:id="@+id/pg_owner_name"
+            android:layout_toStartOf="@id/direction_btn"
+            android:layout_toLeftOf="@id/direction_btn" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_baseline_star_24"
+            android:layout_below="@id/pg_owner_name"
+            android:layout_toEndOf="@+id/pg_img"
+            android:layout_toRightOf="@+id/pg_img"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:id="@+id/star_rating"
+            android:foregroundGravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rating"
+            android:layout_below="@id/pg_owner_name"
+            android:layout_toEndOf="@+id/star_rating"
+            android:layout_toRightOf="@+id/star_rating"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="4dp"
+            android:textSize="15sp"
+            android:gravity="center"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/call"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:id="@+id/call_btn"
+            android:layout_marginEnd="20dp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/location"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="55dp"
+            android:id="@+id/direction_btn"
+            android:layout_marginEnd="55dp" />
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
