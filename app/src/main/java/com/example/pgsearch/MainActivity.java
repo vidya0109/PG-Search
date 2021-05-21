@@ -23,9 +23,15 @@ import android.widget.Toast;
 
 
 import com.example.pgsearch.Adapters.StaggeredAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.w3c.dom.Text;
 
@@ -41,11 +47,13 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout linearLayout;
     TextView textView,textView2,searchBar;
     RecyclerView staggeredRecyclerView;
+    FirebaseFirestore firebaseFirestore;
 
     ArrayList images = new ArrayList<>(Arrays.asList(R.drawable.ic_door_2, R.drawable.ic_door_3, R.drawable.ic_door_4, R.drawable.ic_door_5,
             R.drawable.ic_door_5, R.drawable.ic_door_6,R.drawable.ic_door_2, R.drawable.ic_door_3, R.drawable.ic_door_4, R.drawable.ic_door_5,
             R.drawable.ic_door_5, R.drawable.ic_door_6));
 
+    String name , email , type = "";
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,15 +62,16 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationView navigationView = findViewById(R.id.navmenu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+
         linearLayout = findViewById(R.id.navHeader);
         nav = (NavigationView) findViewById(R.id.navmenu);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         View hView =  navigationView.getHeaderView(0);
         textView = (TextView)hView.findViewById(R.id.name);
         textView2 = (TextView)hView.findViewById(R.id.email);
+        firebaseFirestore = FirebaseFirestore.getInstance();
         textView.setText("Profile name");
-        textView2.setText("Profile email");
+        textView2.setText("Email");
         searchBar = findViewById(R.id.search_bar);
 
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
@@ -83,6 +92,16 @@ public class MainActivity extends AppCompatActivity {
         staggeredRecyclerView.setLayoutManager(staggeredGridLayoutManager);
         StaggeredAdapter adapter = new StaggeredAdapter(MainActivity.this, images);
         staggeredRecyclerView.setAdapter(adapter);
+
+
+
+        searchBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,SearchActivty.class);
+                startActivity(intent);
+            }
+        });
 
 
 
@@ -140,4 +159,5 @@ public class MainActivity extends AppCompatActivity {
         sendtoStart();
 
     }
+
 }
