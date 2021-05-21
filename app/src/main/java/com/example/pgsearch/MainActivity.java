@@ -49,9 +49,8 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView staggeredRecyclerView;
     FirebaseFirestore firebaseFirestore;
 
-    ArrayList images = new ArrayList<>(Arrays.asList(R.drawable.ic_door_2, R.drawable.ic_door_3, R.drawable.ic_door_4, R.drawable.ic_door_5,
-            R.drawable.ic_door_5, R.drawable.ic_door_6,R.drawable.ic_door_2, R.drawable.ic_door_3, R.drawable.ic_door_4, R.drawable.ic_door_5,
-            R.drawable.ic_door_5, R.drawable.ic_door_6));
+    ArrayList images = new ArrayList<>(Arrays.asList(R.drawable.delhi4, R.drawable.kolkata4, R.drawable.srinagar4, R.drawable.jaipur4,
+            R.drawable.bengaluru4));
 
     String name , email , type = "";
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
