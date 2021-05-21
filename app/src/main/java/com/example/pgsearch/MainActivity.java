@@ -42,9 +42,8 @@ public class MainActivity extends AppCompatActivity {
     TextView textView,textView2,searchBar;
     RecyclerView staggeredRecyclerView;
 
-    ArrayList images = new ArrayList<>(Arrays.asList(R.drawable.ic_door_2, R.drawable.ic_door_3, R.drawable.ic_door_4, R.drawable.ic_door_5,
-            R.drawable.ic_door_5, R.drawable.ic_door_6,R.drawable.ic_door_2, R.drawable.ic_door_3, R.drawable.ic_door_4, R.drawable.ic_door_5,
-            R.drawable.ic_door_5, R.drawable.ic_door_6));
+    ArrayList images = new ArrayList<>(Arrays.asList(R.drawable.delhi4, R.drawable.kolkata4, R.drawable.srinagar4, R.drawable.jaipur4,
+            R.drawable.bengaluru4));
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -54,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationView navigationView = findViewById(R.id.navmenu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
         linearLayout = findViewById(R.id.navHeader);
         nav = (NavigationView) findViewById(R.id.navmenu);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);

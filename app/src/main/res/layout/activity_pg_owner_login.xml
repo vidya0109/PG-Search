@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PgOwnerLogin"
-    android:background="@color/LightPink">
+    android:background="@drawable/ic_door_6">
 
     <View
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="0dp"
-
         android:background="@drawable/shape_triangle_second" />
 
     <EditText
