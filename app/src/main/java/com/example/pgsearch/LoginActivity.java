@@ -78,6 +78,7 @@ public class LoginActivity extends AppCompatActivity {
     public void sendtoMain() {
 
         Intent intent1 = new Intent(LoginActivity.this, MainActivity.class);
+        intent1.putExtra("Type", "User");
         startActivity(intent1);
         finish();
 

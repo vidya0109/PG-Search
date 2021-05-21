@@ -100,6 +100,7 @@ public class RegisterActivity extends AppCompatActivity {
     public void sendtoMain() {
 
         Intent intent1 = new Intent(RegisterActivity.this, MainActivity.class);
+        intent1.putExtra("Type", "User");
         startActivity(intent1);
         finish();
 

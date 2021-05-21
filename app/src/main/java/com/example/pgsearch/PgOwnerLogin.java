@@ -83,6 +83,7 @@ public class PgOwnerLogin extends AppCompatActivity {
     public void sendtoMain() {
 
         Intent intent1 = new Intent(PgOwnerLogin.this, MainActivity.class);
+        intent1.putExtra("Type" , "Owner");
         startActivity(intent1);
         finish();
 
