@@ -1,61 +1,78 @@
 package com.example.pgsearch.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pgsearch.R;
+import com.example.pgsearch.SearchActivty;
 
 import java.util.ArrayList;
 
-// Extends the Adapter class to RecyclerView.Adapter
-// and implement the unimplemented methods
+import static com.example.pgsearch.MainActivity.visStatus;
+
 public class StaggeredAdapter extends RecyclerView.Adapter<StaggeredAdapter .ViewHolder> {
     ArrayList images;
     Context context;
 
-    // Constructor for initialization
+
     public StaggeredAdapter (Context context, ArrayList images) {
         this.context = context;
         this.images = images;
+
     }
 
     @NonNull
     @Override
     public StaggeredAdapter .ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Inflating the Layout(Instantiates list_item.xml layout file into View object)
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
 
-        // Passing view to ViewHolder
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
         StaggeredAdapter.ViewHolder viewHolder = new StaggeredAdapter .ViewHolder(view);
         return viewHolder;
     }
 
-    // Binding data to the into specified position
+
     @Override
     public void onBindViewHolder(@NonNull StaggeredAdapter .ViewHolder holder, int position) {
-        // TypeCast Object to int type
         int res = (int) images.get(position);
         holder.images.setImageResource(res);
+        holder.v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                visStatus = 1;
+                Intent intent = new Intent(v.getContext(),SearchActivty.class);
+                v.getContext().startActivity(intent);
+            }
+        });
+
     }
 
     @Override
     public int getItemCount() {
-        // Returns number of items currently available in Adapter
+
         return images.size();
     }
 
     // Initializing the Views
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView images;
+        TextView cityName;
+        View v;
+
 
         public ViewHolder(View view) {
             super(view);
             images = (ImageView) view.findViewById(R.id.imageView);
+            cityName = (TextView)view.findViewById(R.id.city_name);
+            v = view;
+
         }
     }
 }

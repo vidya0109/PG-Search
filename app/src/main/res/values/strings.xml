@@ -32,4 +32,6 @@
     <string name="sample_pg_name">Sample PG NAME</string>
     <string name="sample_pg_owner">Sample PG owner</string>
     <string name="rating">4.5/5</string>
+    <string name="city_name">City Name</string>
+    <string name="city_selected">City Selected</string>
 </resources>

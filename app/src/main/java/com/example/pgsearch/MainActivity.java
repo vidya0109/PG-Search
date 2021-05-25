@@ -48,9 +48,13 @@ public class MainActivity extends AppCompatActivity {
     TextView textView,textView2,searchBar;
     RecyclerView staggeredRecyclerView;
     FirebaseFirestore firebaseFirestore;
+    public static int visStatus = 0;
 
     ArrayList images = new ArrayList<>(Arrays.asList(R.drawable.delhi4, R.drawable.kolkata4, R.drawable.srinagar4, R.drawable.jaipur4,
+            R.drawable.bengaluru4,R.drawable.delhi4, R.drawable.kolkata4, R.drawable.srinagar4, R.drawable.jaipur4,
+            R.drawable.bengaluru4,R.drawable.delhi4, R.drawable.kolkata4, R.drawable.srinagar4, R.drawable.jaipur4,
             R.drawable.bengaluru4));
+
 
     String name , email , type = "";
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -61,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationView navigationView = findViewById(R.id.navmenu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
 
         linearLayout = findViewById(R.id.navHeader);
         nav = (NavigationView) findViewById(R.id.navmenu);

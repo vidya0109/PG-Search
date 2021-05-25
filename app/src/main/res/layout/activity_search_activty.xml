@@ -13,12 +13,13 @@
         android:layout_margin="15dp"
         android:id="@+id/search_bar_rel_layout">
 
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="17sp"
             android:padding="10dp"
-            android:text="@string/search_toolbar_text"
+            android:hint="Search"
+            android:textColorHint="@color/DarkPink"
             android:textColor="@android:color/white"
             android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
@@ -37,21 +38,65 @@
 
     </RelativeLayout>
 
-    <View
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/city_selected_bg"
+        android:layout_below="@id/search_bar_rel_layout"
+        android:id="@+id/search_act_city_select_rel"
+        android:visibility="invisible">
 
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_baseline_cancel_24"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp"
+            android:id="@+id/city_select_cancel_btn"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/city_selected"
+            android:layout_marginRight="4dp"
+            android:layout_centerVertical="true"
+            android:padding="8dp"
+            android:textColor="@android:color/black"
+            android:id="@+id/city_select_name"
+            android:layout_toEndOf="@+id/city_select_cancel_btn"
+            android:layout_toRightOf="@+id/city_select_cancel_btn"
+            android:layout_marginEnd="4dp" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:layout_marginTop="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_act_city_select_rel"
+        android:id="@+id/facilities_scroll_view">
 
-        android:background="@color/LightPink" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:scrollbars="horizontal"
+            android:id="@+id/searchActHorizontalRecView" />
+
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@id/facilities_scroll_view"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewCard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/search_bar_rel_layout"
-        android:layout_marginTop="200dp" />
-
-
+        android:layout_below="@id/facilities_scroll_view" />
 
 </RelativeLayout>
