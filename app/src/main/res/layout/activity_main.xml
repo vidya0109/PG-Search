@@ -10,96 +10,102 @@
     >
     <!--tools:openDrawer="start"-->
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            app:title="PG Search"
-            app:titleTextColor="@color/cardview_light_background" />
-
-
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/toolbar"
-            android:id="@+id/frame_layout">
-
-
-
-            <ImageView
-                android:id="@+id/main_act_text_intro"
-                android:layout_width="wrap_content"
-                android:layout_height="104dp"
-                android:src="@drawable/main_act_img"
-                android:layout_margin="10dp"
-                android:layout_below="@id/toolbar"/>
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_below="@+id/toolbar"
-                android:layout_marginTop="0dp"
-                android:src="@drawable/image4"
-                android:layout_alignTop="@+id/main_act_text_intro"
-                android:layout_margin="25dp"/>
-
-
-
-
-        </FrameLayout>
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/frame_layout"
-            android:background="@drawable/search_bar_bg"
-            android:layout_margin="15dp"
-            android:id="@+id/search_bar_rel_layout">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-            <TextView
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="17sp"
-                android:padding="10dp"
-                android:text="@string/search_toolbar_text"
-                android:textColor="@android:color/white"
-                android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp"
-                android:id="@+id/search_bar"/>
+                android:padding="5dp"
+                app:title="PG Search"
+                app:titleTextColor="@color/cardview_light_background" />
 
-            <ImageView
+
+
+
+            <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_search_24"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:padding="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp" />
+                android:layout_below="@id/toolbar"
+                android:id="@+id/frame_layout">
 
+                <ImageView
+                    android:id="@+id/main_act_text_intro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="104dp"
+                    android:src="@drawable/main_act_img"
+                    android:layout_margin="5dp"
+                    android:layout_below="@id/toolbar"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/toolbar"
+                    android:layout_marginTop="0dp"
+                    android:src="@drawable/image4"
+                    android:layout_alignTop="@+id/main_act_text_intro"
+                    android:layout_margin="25dp"/>
+
+            </FrameLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/frame_layout"
+                android:background="@drawable/search_bar_bg"
+                android:layout_margin="15dp"
+                android:id="@+id/search_bar_rel_layout">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:padding="10dp"
+                    android:text="@string/search_toolbar_text"
+                    android:textColor="@android:color/white"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/search_bar"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_search_24"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:padding="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Popular Cities"
+                android:layout_below="@+id/search_bar_rel_layout"
+                android:textSize="30sp"
+                android:id="@+id/pop_cities"
+                android:fontFamily="@font/bevan"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewStaggered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pop_cities"
+                android:layout_marginTop="20dp" />
 
         </RelativeLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Popular Cities"
-            android:layout_below="@+id/search_bar_rel_layout"
-            android:textSize="40sp"
-            android:id="@+id/pop_cities"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewStaggered"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/pop_cities"
-            android:layout_marginTop="20dp" />
 
-    </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navmenu"
@@ -109,3 +115,4 @@
         app:menu="@menu/iconmenu"
         app:headerLayout="@layout/navheader"
         android:layout_gravity="start"/>
+</androidx.drawerlayout.widget.DrawerLayout>
