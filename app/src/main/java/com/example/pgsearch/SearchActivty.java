@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -25,11 +26,11 @@ public class SearchActivty extends AppCompatActivity {
     RelativeLayout citySelectedRel;
     ImageView citySelectCancelBTn;
     RecyclerView horizontalRecViewSearchAct;
-
+    EditText search;
     ArrayList horizontalImg = new ArrayList(Arrays.asList(R.drawable.wifi,R.drawable.food,R.drawable.furnitures,R.drawable.airconditioner,
             R.drawable.reading,R.drawable.wifi,R.drawable.food,R.drawable.furnitures,R.drawable.airconditioner,
             R.drawable.reading));
-
+    ImageView searcButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,13 +38,33 @@ public class SearchActivty extends AppCompatActivity {
 
         citySelectCancelBTn = findViewById(R.id.city_select_cancel_btn);
         citySelectedRel = findViewById(R.id.search_act_city_select_rel);
-        pgname = new ArrayList<>(Arrays.asList("Sample1" , "Sample2" , "Sample3" , "Sample4"));
-        pgOwnername = new ArrayList<String>(Arrays.asList("Sample12" , "Sample23" , "Sample34" , "Sample45"));
+        pgname = new ArrayList<>(Arrays.asList("Sample1" , "Sample2" , "Sample3" , "Sample4","Sample5","Sample6"));
+        pgOwnername = new ArrayList<String>(Arrays.asList("Bangalore" , "Delhi" , "Mumbai" , "Srinagar","Bangalore","Srinagar"));
         horizontalRecViewSearchAct = findViewById(R.id.searchActHorizontalRecView);
         recyclerView = findViewById(R.id.recyclerViewCard);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        cardViewAdapter = new CardViewAdapter(this,pgname,pgOwnername);
+        search  = findViewById(R.id.search_bar_search_act);
+        searcButton = findViewById(R.id.mag_icon_search_act);
+        cardViewAdapter = new CardViewAdapter(SearchActivty.this,pgname,pgOwnername);
         recyclerView.setAdapter(cardViewAdapter);
+
+
+
+        searcButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String city  = search.getText().toString();
+                System.out.println(city);
+                cardViewAdapter = new CardViewAdapter(SearchActivty.this,pgname,pgOwnername,city);
+                recyclerView.setAdapter(cardViewAdapter);
+
+
+            }
+        });
+
+
+
 
         LinearLayoutManager horizontalLayoutManager = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
         horizontalRecViewSearchAct.setLayoutManager(horizontalLayoutManager);

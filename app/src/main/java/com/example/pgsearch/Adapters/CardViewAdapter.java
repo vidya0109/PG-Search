@@ -15,10 +15,20 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ViewHo
 
     ArrayList <String> pgname , pgOwnername;
     Context context;
+    String city="";
+
+    public CardViewAdapter (Context context, ArrayList pgname , ArrayList pgOwnername,String city) {
+        this.context = context;
+        this.pgname = pgname;
+        this.pgOwnername = pgOwnername;
+        this.city = city;
+
+    }
     public CardViewAdapter (Context context, ArrayList pgname , ArrayList pgOwnername) {
         this.context = context;
         this.pgname = pgname;
         this.pgOwnername = pgOwnername;
+
     }
 
     @NonNull
@@ -32,14 +42,21 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        int i = position;
-        holder.textView.setText(pgname.get(i));
-        holder.textView2.setText(pgOwnername.get(i));
 
+        if (city.equals("")){
+
+            holder.textView.setText(pgname.get(position));
+            holder.textView2.setText(pgOwnername.get(position));
+
+        }
+
+        if (city.equals(pgOwnername.get(position))) {
+            holder.textView.setText(pgname.get(position));
+            holder.textView2.setText(pgOwnername.get(position));
+        }
 
 
     }
-
 
 
     @Override
