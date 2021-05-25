@@ -33,7 +33,7 @@ public class SearchActivty extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_activty);
+        setContentView(R.layout.activity_search_activity);
 
         citySelectCancelBTn = findViewById(R.id.city_select_cancel_btn);
         citySelectedRel = findViewById(R.id.search_act_city_select_rel);
