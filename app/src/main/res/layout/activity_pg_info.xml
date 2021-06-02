@@ -6,17 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".pgInfoActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:src="@drawable/image3"
-        android:id="@+id/pg_info_bg_image"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/pg_info_bg_image"
+        android:id="@+id/pg_info_bg_image"
         android:background="@drawable/list_item_bg"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/pg_info_bg_image"
+            android:background="@drawable/list_item_bg"/>
 
     <ImageView
         android:layout_width="100dp"
@@ -84,19 +93,38 @@
 
     </RelativeLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Facilities"
+                android:layout_below="@id/pg_info_pg_owner"
+                android:textSize="30dp"
+                android:id="@+id/facility_title"
+                android:layout_marginTop="20dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/pg_info_pg_owner"
+        android:layout_below="@id/facility_title"
         android:layout_marginTop="10dp"
         android:id="@+id/facilities_grid_layout"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Contact"
+                android:layout_below="@id/facilities_grid_layout"
+                android:textSize="30dp"
+                android:id="@+id/contact_title"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:baselineAligned="false"
-        android:layout_below="@id/facilities_grid_layout"
+        android:layout_below="@id/contact_title"
         android:id="@+id/contact_and_location">
 
         <RelativeLayout
@@ -128,12 +156,43 @@
 
     </LinearLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Gallery"
+                android:layout_below="@id/contact_and_location"
+                android:textSize="30dp"
+                android:id="@+id/gallery_title"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/contact_and_location"
+        android:layout_below="@id/gallery_title"
         android:layout_marginTop="10dp"
         android:id="@+id/pg_image_staggered"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Reviews"
+                android:layout_below="@id/pg_image_staggered"
+                android:textSize="30dp"
+                android:id="@+id/review_Title"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/review_rec_view"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/review_Title"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

@@ -24,7 +24,8 @@
             android:text="Sample Review Sample Review Sample Review"
             android:textSize="15dp"
             android:padding="5dp"
-            android:layout_below="@id/review_user_name"/>
+            android:layout_below="@id/review_user_name"
+            android:id="@+id/review"/>
 
     </RelativeLayout>
 

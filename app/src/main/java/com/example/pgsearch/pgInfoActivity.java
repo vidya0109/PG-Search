@@ -9,8 +9,10 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.example.pgsearch.Adapters.SearchActHorizontalAdapter;
 import com.example.pgsearch.Adapters.facilitiesInfoPageAdapter;
 import com.example.pgsearch.Adapters.imageGalleryAdapter;
+import com.example.pgsearch.Adapters.reviewAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,7 +20,7 @@ import java.util.Arrays;
 public class pgInfoActivity extends AppCompatActivity {
 
     ImageView imagePgBg,imagePgProfile;
-    RecyclerView facilitiesRecView,imageGalStaggeredRecView;
+    RecyclerView facilitiesRecView,imageGalStaggeredRecView,reviewRecView;
 
     ArrayList facilities = new ArrayList<>(Arrays.asList(R.drawable.airconditioner,R.drawable.reading,R.drawable.wifi,R.drawable.food));
     ArrayList pgImages = new ArrayList<>(Arrays.asList(R.drawable.home1,R.drawable.home2,R.drawable.home3,R.drawable.home4,R.drawable.home1,R.drawable.home2,R.drawable.home3,R.drawable.home4));
@@ -32,6 +34,7 @@ public class pgInfoActivity extends AppCompatActivity {
         imagePgProfile = findViewById(R.id.pg_info_profile_img);
         facilitiesRecView = findViewById(R.id.facilities_grid_layout);
         imageGalStaggeredRecView = findViewById(R.id.pg_image_staggered);
+        reviewRecView = findViewById(R.id.review_rec_view);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(),5);
         facilitiesRecView.setLayoutManager(gridLayoutManager);
@@ -42,6 +45,11 @@ public class pgInfoActivity extends AppCompatActivity {
         imageGalStaggeredRecView.setLayoutManager(staggeredGridLayoutManager);
         imageGalleryAdapter imageGalleryAdapter = new imageGalleryAdapter(pgInfoActivity.this,pgImages);
         imageGalStaggeredRecView.setAdapter(imageGalleryAdapter);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false);
+        reviewRecView.setLayoutManager(linearLayoutManager);
+        reviewAdapter searchActHorizontalAdapter = new reviewAdapter(pgInfoActivity.this);
+        reviewRecView.setAdapter(searchActHorizontalAdapter);
 
     }
 }
