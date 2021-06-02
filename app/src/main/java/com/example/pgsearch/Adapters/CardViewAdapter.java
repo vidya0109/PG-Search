@@ -1,13 +1,17 @@
 package com.example.pgsearch.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.pgsearch.R;
+import com.example.pgsearch.pgInfoActivity;
+
 import java.util.ArrayList;
 
 
@@ -55,6 +59,14 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ViewHo
             holder.textView2.setText(pgOwnername.get(position));
         }
 
+        holder.pgImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), pgInfoActivity.class);
+                v.getContext().startActivity(intent);
+            }
+        });
+
 
     }
 
@@ -68,11 +80,13 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
        TextView textView , textView2;
+       ImageView pgImage;
 
         public ViewHolder(View view) {
             super(view);
             textView = view.findViewById(R.id.pg_name);
             textView2 = view.findViewById(R.id.pg_owner_name);
+            pgImage = view.findViewById(R.id.pg_img);
         }
     }
 

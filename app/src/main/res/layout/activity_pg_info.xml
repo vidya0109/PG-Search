@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pgInfoActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/image3"
+        android:id="@+id/pg_info_bg_image"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/pg_info_bg_image"
+        android:background="@drawable/list_item_bg"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/image4"
+        android:background="@color/DarkBlue"
+        android:padding="5dp"
+        android:layout_alignBottom="@+id/pg_info_bg_image"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:id="@+id/pg_info_profile_img"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pg_info_bg_image"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/bevan"
+        android:text="@string/pg_name"
+        android:textSize="40sp"
+        android:layout_marginRight="100dp"
+        android:layout_marginEnd="100dp"
+        android:id="@+id/pg_info_pg_name"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pg_owner_name"
+        android:layout_below="@id/pg_info_pg_name"
+        android:textSize="17sp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginEnd="100dp"
+        android:id="@+id/pg_info_pg_owner"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pg_info_bg_image"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_star_24"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "4.5/5"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="7dp"
+            android:textSize="25sp"
+            android:layout_marginRight="10dp" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pg_info_pg_owner"
+        android:layout_marginTop="10dp"
+        android:id="@+id/facilities_grid_layout"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        android:layout_below="@id/facilities_grid_layout"
+        android:id="@+id/contact_and_location">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/call"
+                android:padding="12dp"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/location"
+                android:padding="12dp"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contact_and_location"
+        android:layout_marginTop="10dp"
+        android:id="@+id/pg_image_staggered"/>
+
+
+</RelativeLayout>
