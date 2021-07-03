@@ -16,7 +16,10 @@
             android:text="User Name"
             android:textSize="20sp"
             android:padding="5dp"
-            android:id="@+id/review_user_name"/>
+            android:id="@+id/review_user_name"
+            android:textColor="@color/DarkBlue"
+            android:textStyle="bold"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -24,8 +27,9 @@
             android:text="Sample Review Sample Review Sample Review"
             android:textSize="15dp"
             android:padding="5dp"
-            android:layout_below="@id/review_user_name"
-            android:id="@+id/review"/>
+            android:id="@+id/review"
+            android:textColor="#0074a6"
+            android:layout_below="@id/review_user_name" />
 
     </RelativeLayout>
 

@@ -127,6 +127,11 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Setting Panel is Open", Toast.LENGTH_LONG).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
+
+                    case  R.id.previousBookings:
+                        Intent i = new Intent(MainActivity.this,PreviousBookings.class);
+                        startActivity(i);
+                        finish();
                 }
 
                 return true;

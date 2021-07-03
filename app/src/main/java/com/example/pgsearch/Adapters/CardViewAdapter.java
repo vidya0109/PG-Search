@@ -62,8 +62,8 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ViewHo
         holder.pgImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), pgInfoActivity.class);
-                v.getContext().startActivity(intent);
+                Intent intent = new Intent(context, pgInfoActivity.class);
+                context.startActivity(intent);
             }
         });
 
@@ -74,7 +74,11 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ViewHo
     @Override
     public int getItemCount() {
 
-        return pgname.size();
+
+        if (city.equals(""))
+            return pgname.size();
+        else
+            return pgname.size()-3;
     }
 
 

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pgsearch">
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -10,10 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PGSearch">
-        <activity android:name=".pgInfoActivity"></activity>
+        <activity android:name=".PreviousBookings"></activity>
+        <activity android:name=".pgInfoActivity" />
         <activity android:name=".SearchActivty" />
         <activity android:name=".UserOwnerActivity" />
         <activity android:name=".PgOwnerLogin" />
+        <activity android:name=".reviewsActivity" />
+        <activity android:name=".GalleryActivity" />
         <activity android:name=".PgOwnerReg" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />

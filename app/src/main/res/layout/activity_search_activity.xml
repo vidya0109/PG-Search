@@ -85,7 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:scrollbars="none"
-            android:id="@+id/searchActHorizontalRecView" />
+            android:id="@+id/searchActHorizontalRecView"
+            android:overScrollMode="never"/>
 
     </androidx.core.widget.NestedScrollView>
 
